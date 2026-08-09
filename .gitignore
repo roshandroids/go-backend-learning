@@ -1,0 +1,21 @@
+# Go
+*.exe
+*.test
+*.out
+/bin/
+/dist/
+
+# Dart/Flutter
+.dart_tool/
+.packages
+build/
+*.g.dart
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Env
+.env
+*.local
+
+# OS
+.DS_Store
