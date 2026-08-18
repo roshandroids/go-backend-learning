@@ -26,3 +26,21 @@ func (p *Point) Translate(dx, dy int) {
 	p.X += dx
 	p.Y += dy
 }
+
+// Scale is intentionally the WRONG choice of receiver — a value receiver
+// means any mutation here happens to a copy and is thrown away when the
+// method returns. See ScaleInPlace for the fix, and point_test.go for the
+// test that proves the difference.
+//
+// TODO(exercise, Level 2): multiply p.X and p.Y by factor.
+func (p Point) Scale(factor float64) {
+	// TODO: p.X = int(float64(p.X) * factor); p.Y = int(float64(p.Y) * factor)
+}
+
+// ScaleInPlace is the corrected version: a pointer receiver mutates the
+// caller's original Point, same as Translate above.
+//
+// TODO(exercise, Level 2): multiply p.X and p.Y by factor, in place.
+func (p *Point) ScaleInPlace(factor float64) {
+	// TODO: p.X = int(float64(p.X) * factor); p.Y = int(float64(p.Y) * factor)
+}
