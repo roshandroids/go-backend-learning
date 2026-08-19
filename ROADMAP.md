@@ -33,7 +33,7 @@ progress.
   - [ ] Point: `Scale` (value receiver) vs `ScaleInPlace` (pointer receiver) — in progress
 - [ ] Stage 2 — Type System & Design Philosophy
   - [ ] `concepts/02-types-and-structs`: zero values, nil-vs-empty slice/map footgun (`Store.Add` — scaffolded, TODO gap open)
-  - [ ] `concepts/03-functions-and-methods`: first-class functions/closures (e.g. a validator function type, foreshadowing Stage 5 middleware)
+  - [ ] `concepts/03-functions-and-methods`: first-class functions/closures (`Validator`/`All` — scaffolded, TODO gap open)
   - [ ] `concepts/04-interfaces`: consumer-defined interface (`Notifier` with `EmailNotifier`/`SMSNotifier`) + embedding-has-no-dynamic-dispatch trap (`Animal`/`Dog`)
 - [ ] Stage 3 — Error Handling
   - [ ] `concepts/05-error-handling`: `validateAge` custom `ValidationError` + `errors.As` extraction exercise
