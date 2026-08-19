@@ -36,7 +36,7 @@ progress.
   - [ ] `concepts/03-functions-and-methods`: first-class functions/closures (`Validator`/`All` — scaffolded, TODO gap open)
   - [ ] `concepts/04-interfaces`: consumer-defined `notifier` interface (`Alert` — scaffolded, TODO gap open) + embedding trap (`Animal`/`Dog` — implemented, Predict exercise, no gap)
 - [ ] Stage 3 — Error Handling
-  - [ ] `concepts/05-error-handling`: `validateAge` custom `ValidationError` + `errors.As` extraction exercise
+  - [ ] `concepts/05-error-handling`: `ValidateAge`/`DescribeError`, custom `ValidationError` + `errors.As` (scaffolded, TODO gaps open)
 - [ ] Stage 4 — Concurrency (major section — expect multiple passes)
   - [ ] `concepts/06-concurrency`: fan-out/fan-in pipeline (100 ints → 5 squarer workers → collector), clean under `-race`
   - [ ] `concepts/06-concurrency`: same pipeline, rewritten to respect `ctx.Done()` for clean cancellation
