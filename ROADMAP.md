@@ -38,8 +38,8 @@ progress.
 - [ ] Stage 3 — Error Handling
   - [ ] `concepts/05-error-handling`: `ValidateAge`/`DescribeError`, custom `ValidationError` + `errors.As` (scaffolded, TODO gaps open)
 - [ ] Stage 4 — Concurrency (major section — expect multiple passes)
-  - [ ] `concepts/06-concurrency`: fan-out/fan-in pipeline (100 ints → 5 squarer workers → collector), clean under `-race`
-  - [ ] `concepts/06-concurrency`: same pipeline, rewritten to respect `ctx.Done()` for clean cancellation
+  - [ ] `concepts/06-concurrency`: fan-out/fan-in pipeline `Square` (scaffolded, TODO gap open) — 100 ints → 5 squarer workers → collector, clean under `-race`
+  - [ ] `concepts/06-concurrency`: `SquareContext` (scaffolded, TODO gap open) — same pipeline, respecting `ctx.Done()` for clean cancellation
 - [ ] Stage 5 — HTTP / Backend Fundamentals
   - [ ] `concepts/07-http`: stdlib-only server (`/health`, `/users/{id}`, `POST /users`), logging middleware, graceful `SIGTERM` shutdown
 - [ ] Stage 6 — REST API Development
