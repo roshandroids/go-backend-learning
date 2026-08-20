@@ -30,6 +30,13 @@ func Generate(n int) <-chan int {
 //     this is what lets a `for v := range out` on the caller's side
 //     terminate instead of blocking forever.
 //
+// IMPORTANT: step 3's wg.Wait()+close(out) MUST run in its own goroutine,
+// not inline in Square's body. Square itself must return immediately
+// after launching the workers and the closer — otherwise Square blocks
+// until all workers finish before ever returning `out`, and a caller
+// that hasn't started reading `out` yet deadlocks against workers that
+// are blocked trying to send into it.
+//
 // Run this under `go test -race` once implemented — a fan-out writing to
 // a shared `out` channel is a classic spot to introduce (or fail to
 // introduce) a data race.
