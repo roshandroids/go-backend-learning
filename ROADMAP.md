@@ -41,7 +41,7 @@ progress.
   - [ ] `concepts/06-concurrency`: fan-out/fan-in pipeline `Square` (scaffolded, TODO gap open) — 100 ints → 5 squarer workers → collector, clean under `-race`
   - [ ] `concepts/06-concurrency`: `SquareContext` (scaffolded, TODO gap open) — same pipeline, respecting `ctx.Done()` for clean cancellation
 - [ ] Stage 5 — HTTP / Backend Fundamentals
-  - [ ] `concepts/07-http`: stdlib-only server (`/health`, `/users/{id}`, `POST /users`), logging middleware, graceful `SIGTERM` shutdown
+  - [ ] `concepts/07-http`: stdlib server (`/health`, `/users/{id}`, `POST /users` — implemented) + `LoggingMiddleware` (scaffolded, TODO gap open); graceful `SIGTERM` shutdown deferred to `projects/02-rest-api`
 - [ ] Stage 6 — REST API Development
   - [ ] `concepts/08-rest-api-design`: extend Stage 5 server into in-memory CRUD `Task` API, validation, structured `APIError`, cursor pagination
 - [ ] Stage 7 — Databases
