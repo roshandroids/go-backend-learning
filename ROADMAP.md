@@ -64,7 +64,7 @@ Redis-backed distributed WS system — deliberately deferred, per the
 roadmap's "don't front-load Stage 10/11" guidance. Add them when we're
 actually about to need them, not before.
 
-1. `projects/01-cli` — needs Stage 1/2/3 (structs, zero values, error handling) solid first.
+1. `projects/01-cli` — scaffolded: `ParseTransactions`/`Summarize` are TODO gaps, wiring/output fully implemented, `go test -race ./...` green (skipped tests only).
 2. `projects/02-rest-api` — needs Stage 5/6 (`concepts/07-http`, `08-rest-api-design`).
 3. `projects/03-chat-server` — needs Stage 4/8 (`concepts/06-concurrency`, `10-websockets`); feeds WS Ladder items 1–12.
 4. `projects/04-flutter-go-chat` — needs project 3 done + Stage 7 (`09-postgresql`) for persistence; feeds WS Ladder items 13–14.
