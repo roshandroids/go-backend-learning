@@ -1,10 +1,19 @@
-// Command server is Project 6: a standalone WebSocket broadcast server
-// with rooms, implementing the Hub pattern from Stage 8. Stub --
-// build the Hub/Client pair yourself per the WebSocket challenge ladder.
+// Command server is Project 3: a standalone WebSocket broadcast server
+// with rooms, presence, and ping/pong heartbeats — the Hub pattern from
+// Stage 8, applied for real over a live server this time.
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+
+	"github.com/YOUR_USERNAME/go-backend-learning/projects/03-chat-server/internal/hub"
+)
 
 func main() {
-	fmt.Println("TODO: implement Hub, Client, read/write pumps")
+	rm := hub.NewRoomManager()
+	mux := hub.NewServer(rm)
+
+	log.Println("listening on :8081")
+	log.Fatal(http.ListenAndServe(":8081", mux))
 }
