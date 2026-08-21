@@ -47,7 +47,21 @@ progress.
 - [ ] Stage 7 — Databases
   - [ ] `concepts/09-postgresql`: `ClassifyError` (scaffolded, TODO gap open, no live DB needed); pooled `TaskRepository`/transaction is reference-only via `pgx` driver, exercised for real in `projects/04`
 - [ ] Stage 8 — WebSockets
-  - [ ] `concepts/10-websockets`: Hub/Client pattern in isolation (read pump/write pump/register/unregister) before it becomes `projects/03-chat-server`
+  - [ ] `concepts/10-websockets`: Hub/Client pattern in isolation (read pump/write pump/register/unregister) before it becomes `projects/03-chat-server`.
+    Library: `gorilla/websocket` (matches the roadmap doc's own Hub-pattern
+    code samples directly — no adaptation needed). This is the second
+    non-stdlib dependency in `concepts/go.mod`, after `pgx`.
+    Planned shape, mirroring the Postgres split (testable-without-a-real-
+    connection vs reference code needing one):
+    - **Testable exercise**: the `Hub`'s `register`/`unregister`/`broadcast`
+      channel-select loop and the backpressure `default:` drop — this runs
+      with a fake `*Client` (a struct wrapping a `chan []byte`, no real
+      `*websocket.Conn` needed), so `go test -race` exercises the actual
+      concurrency logic without opening a socket.
+    - **Reference-only**: `readPump`/`writePump`, since those need a real
+      `*websocket.Conn` (via `httptest.NewServer` + an upgrade handshake) to
+      run at all — deferred to `projects/03-chat-server`, where a live
+      server makes that reachable.
 - [ ] Stage 9 — Testing (cross-cutting, not a dedicated folder)
   - [ ] Applied retroactively per module as each is built: table-driven tests, `httptest`, eventually `testcontainers-go` for Stage 7
 - [ ] Stage 10 — Production Backend Engineering (deferred, just-in-time)
