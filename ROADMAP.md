@@ -43,7 +43,7 @@ progress.
 - [ ] Stage 5 — HTTP / Backend Fundamentals
   - [ ] `concepts/07-http`: stdlib server (`/health`, `/users/{id}`, `POST /users` — implemented) + `LoggingMiddleware` (scaffolded, TODO gap open); graceful `SIGTERM` shutdown deferred to `projects/02-rest-api`
 - [ ] Stage 6 — REST API Development
-  - [ ] `concepts/08-rest-api-design`: extend Stage 5 server into in-memory CRUD `Task` API, validation, structured `APIError`, cursor pagination
+  - [ ] `concepts/08-rest-api-design`: `Store.List` cursor pagination (scaffolded, TODO gap open); validation/structured errors intentionally not re-taught (see `concepts/05-error-handling`)
 - [ ] Stage 7 — Databases
   - [ ] `concepts/09-postgresql`: pooled repository, one transactional multi-table write, deliberate pool-exhaustion demo (`SetMaxOpenConns(2)`)
 - [ ] Stage 8 — WebSockets
