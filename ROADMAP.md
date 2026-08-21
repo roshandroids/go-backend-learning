@@ -11,13 +11,49 @@ Interactive teaching system: see `../Backend_stack/docs/learning/go-mentorship-p
 
 ## You Are Here
 
-- **Current stage:** Stage 1 — Go Fundamentals
-- **Current exercise:** `concepts/01-fundamentals/README.md` — add `Scale`
-  (value receiver, intentionally wrong) and `ScaleInPlace` (pointer receiver)
-  to `Point`, plus a test proving the mutation difference.
-- **Next command:** `cd concepts && go test ./... -run TestPoint -v`
-- **Last touched:** 2026-08-10 (brain memory system added; last real code
-  change was 2026-08-08).
+- **Scaffolding phase: done.** As of 2026-08-21, every concept folder
+  (`01`–`10`) and every project (`01-cli` through `04-flutter-go-chat`)
+  has a real `// TODO`-gapped exercise, tests (`t.Skip(...)` until the
+  gap is filled), a Dart comparison, and a filled-in README. Everything
+  builds and `./scripts/test.sh` is green (skipped tests, no failures).
+- **Learning phase: not started beyond the original Point exercise.**
+  Scaffolding ≠ solved — every gap below is still open. Pick up wherever
+  you like; they're independent, but earlier ones assume less.
+- **Suggested next exercise:** `concepts/01-fundamentals` — add `Scale`
+  (value receiver, intentionally wrong) and `ScaleInPlace` (pointer
+  receiver) to `Point`. Next command: `cd concepts/01-fundamentals/go &&
+  go test -run TestScale -v`.
+- **All open TODO gaps, in suggested order** (see the Stage Checklist
+  below for what each one teaches):
+  1. `concepts/01-fundamentals`: `Point.Scale`, `Point.ScaleInPlace`
+  2. `concepts/02-types-and-structs`: `Store.Add`
+  3. `concepts/03-functions-and-methods`: `All`
+  4. `concepts/04-interfaces`: `Alert`
+  5. `concepts/05-error-handling`: `ValidateAge`, `DescribeError`
+  6. `concepts/06-concurrency`: `Square`, `SquareContext`
+  7. `concepts/07-http`: `LoggingMiddleware`
+  8. `concepts/08-rest-api-design`: `Store.List`
+  9. `concepts/09-postgresql`: `ClassifyError`
+  10. `concepts/10-websockets`: `Hub.Run`
+  11. `projects/01-cli`: `ParseTransactions`, `Summarize`
+  12. `projects/02-rest-api`: `validateCreateRequest`,
+      `Repository.Create`/`Get`/`List`
+  13. `projects/03-chat-server`: `Hub.Run`, `RoomManager.GetOrCreate`
+  14. `projects/04-flutter-go-chat`: `HandleIncoming`, `ValidateToken`
+- **Known gaps in the scaffolding itself** (not exercises — things to
+  fix or decide before/while working through the list above):
+  - Brain CLI (`brain-page` skill's `bin/brain.mjs`) is missing, so none
+    of 2026-08-21's decisions are recorded in `brain/` — only here and
+    in `docs/journal/2026-08-21.md`. Fix that skill install, then
+    backfill via `brain ingest` if it still matters at that point.
+  - `projects/04-flutter-go-chat`'s Hub isn't wired — copy your working
+    one from `projects/03-chat-server` in once #13 above is done (see
+    `go_server/cmd/server/main.go`'s doc comment).
+  - No real Postgres/Flutter available this session — `concepts/09`'s
+    `TaskRepository` and `projects/04`'s `MessageStore` are
+    reference-only/in-memory until you have both reachable.
+- **Last touched:** 2026-08-21 (scaffolding session — see
+  `docs/journal/2026-08-21.md`).
 
 ## Stage Checklist
 
