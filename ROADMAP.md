@@ -45,7 +45,7 @@ progress.
 - [ ] Stage 6 — REST API Development
   - [ ] `concepts/08-rest-api-design`: `Store.List` cursor pagination (scaffolded, TODO gap open); validation/structured errors intentionally not re-taught (see `concepts/05-error-handling`)
 - [ ] Stage 7 — Databases
-  - [ ] `concepts/09-postgresql`: pooled repository, one transactional multi-table write, deliberate pool-exhaustion demo (`SetMaxOpenConns(2)`)
+  - [ ] `concepts/09-postgresql`: `ClassifyError` (scaffolded, TODO gap open, no live DB needed); pooled `TaskRepository`/transaction is reference-only via `pgx` driver, exercised for real in `projects/04`
 - [ ] Stage 8 — WebSockets
   - [ ] `concepts/10-websockets`: Hub/Client pattern in isolation (read pump/write pump/register/unregister) before it becomes `projects/03-chat-server`
 - [ ] Stage 9 — Testing (cross-cutting, not a dedicated folder)
