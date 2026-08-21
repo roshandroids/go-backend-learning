@@ -67,7 +67,7 @@ actually about to need them, not before.
 1. `projects/01-cli` — scaffolded: `ParseTransactions`/`Summarize` are TODO gaps, wiring/output fully implemented, `go test -race ./...` green (skipped tests only).
 2. `projects/02-rest-api` — scaffolded: handler/service/repository/model wired and running (manually verified), `validateCreateRequest`/`Repository.Create/Get/List` are TODO gaps, `go test -race ./...` green (skipped tests only).
 3. `projects/03-chat-server` — scaffolded: `Hub`/`RoomManager`/pumps/presence wired (build verified), `Hub.Run`/`RoomManager.GetOrCreate` are TODO gaps, real WS integration tests written (skipped) alongside fake-Client unit tests; feeds WS Ladder items 1–9 (backpressure/rung 11-12 covered by fake-Client tests only, deliberately not over a real socket).
-4. `projects/04-flutter-go-chat` — needs project 3 done + Stage 7 (`09-postgresql`) for persistence; feeds WS Ladder items 13–14.
+4. `projects/04-flutter-go-chat` — Go-server side only scaffolded (`go_server/internal/chat`): `HandleIncoming`/`ValidateToken` are TODO gaps, both testable without a live DB. Hub not re-scaffolded (copy your own from `projects/03-chat-server` once implemented — see `cmd/server/main.go`'s doc comment). Flutter app and a real Postgres-backed store remain future work; feeds WS Ladder items 13–14.
 
 ## WebSocket Challenge Ladder Progress
 - [ ] 1. Connect Flutter to Go
